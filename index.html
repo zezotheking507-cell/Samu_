@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio Website</title>
-    
+
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Welcome Banner -->
+    <div class="welcome-banner">Welcome to my awesome portfolio website!</div>
 
     <!-- Header & Navigation -->
     <nav class="navbar">
@@ -26,8 +29,13 @@
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <!-- Dark/Light Mode Toggle Button -->
+        <button id="themeToggle" class="theme-btn" title="Toggle Dark/Light Mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
         <div class="menu-btn" id="menuBtn">
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -37,15 +45,18 @@
     <section id="hero" class="hero-section">
         <div class="hero-content">
             <span class="badge">Welcome to my space 👋</span>
-            <h1>Hi, I build <span class="highlight">websites & apps</span> that work great</h1>
+            <h1 class="hero-title">
+                Hi, I am Ziad, I build <span id="typingText" class="gradient-text"></span>
+            </h1>
             <p>I am a front-end developer passionate about making clean, responsive, and easy-to-use websites for everyone.</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> View Projects</a>
                 <a href="#contact" class="btn btn-secondary"><i class="fa-regular fa-envelope"></i> Contact Me</a>
+                <a href="#" class="btn btn-secondary" onclick="alert('My CV is coming soon!'); return false;"><i class="fa-solid fa-download"></i> Download CV</a>
             </div>
             <div class="stats">
                 <div class="stat-item">
-                    <h3 class="counter" data-target="25">0</h3>
+                    <h3 class="counter" data-target="10">0</h3>
                     <p>Done Projects</p>
                 </div>
                 <div class="stat-item">
@@ -64,10 +75,13 @@
     <section id="about" class="section">
         <h2 class="section-title">About <span>Me</span></h2>
         <div class="about-container">
+            <div class="about-image">
+                <img src="me.jpeg" alt="Ziad's portrait">
+            </div>
             <div class="about-text">
                 <h3>Passionate Web Developer</h3>
                 <p>I focus on writing clean HTML, CSS, and JavaScript. I enjoy learning new tech stack and turning ideas into real working code.</p>
-                
+
                 <div class="skills">
                     <h4>Tech Skills I use:</h4>
                     <div class="skill-tags">
@@ -108,7 +122,7 @@
     <section id="projects" class="section">
         <h2 class="section-title">My <span>Projects</span></h2>
         <div class="projects-grid">
-            
+
             <div class="project-card">
                 <div class="project-info">
                     <span class="category">Web App</span>
@@ -139,22 +153,76 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <h2 class="section-title">What People Say 💬</h2>
+        <p class="section-subtitle">Real feedback and reviews from friends, mentors, and clients</p>
+
+        <!-- Form to Submit New Review -->
+        <div class="review-form-card">
+            <h3>Add Your Review:</h3>
+            <form id="portfolioReviewForm">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="revName">Name:</label>
+                        <input type="text" id="revName" placeholder="e.g. Alex Smith" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="revRole">Role / Title:</label>
+                        <input type="text" id="revRole" placeholder="e.g. Developer / Friend / Client" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Rating:</label>
+                    <div class="star-rating">
+                        <input type="radio" id="st5" name="revRating" value="5" checked><label for="st5" title="5 Stars">★</label>
+                        <input type="radio" id="st4" name="revRating" value="4"><label for="st4" title="4 Stars">★</label>
+                        <input type="radio" id="st3" name="revRating" value="3"><label for="st3" title="3 Stars">★</label>
+                        <input type="radio" id="st2" name="revRating" value="2"><label for="st2" title="2 Stars">★</label>
+                        <input type="radio" id="st1" name="revRating" value="1"><label for="st1" title="1 Star">★</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="revComment">Comment / Feedback:</label>
+                    <textarea id="revComment" rows="3" placeholder="Write your honest review here..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Submit Review</button>
+            </form>
+        </div>
+
+        <!-- Container where all reviews appear -->
+        <div id="reviewsList" class="reviews-grid">
+            <!-- Reviews will render dynamically here -->
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section bg-light">
         <h2 class="section-title">Get In <span>Touch</span></h2>
         <div class="contact-container">
-            <form id="contactForm" class="contact-form">
+            <form action="https://formsubmit.co/zezotheking507@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New Portfolio Message!">
+
                 <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="text" name="name" id="name" placeholder="Your Name" required>
                 </div>
+
                 <div class="form-group">
-                    <input type="email" id="email" placeholder="Your Email" required>
+                    <input type="email" name="email" id="email" placeholder="Your Email" required>
                 </div>
+
                 <div class="form-group">
-                    <textarea id="message" rows="5" placeholder="Your Message..." required></textarea>
+                    <textarea name="message" id="message" rows="5" placeholder="Your Message..." required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
-                <div id="formStatus" class="form-status"></div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fa-solid fa-paper-plane"></i> Contact me now
+                </button>
             </form>
         </div>
     </section>
@@ -167,7 +235,7 @@
     <!-- Back to top button -->
     <button id="scrollTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
 
-    <!-- JS File -->
-    <script src="script.js"></script>
+    <!-- JS File (type="module" is required for Firebase imports) -->
+    <script type="module" src="script.js"></script>
 </body>
 </html>
