@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Website</title>
+    
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <nav class="navbar">
+        <div class="logo"><i class="fa-solid fa-code"></i> DevProfile</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <span class="badge">Welcome to my space 👋</span>
+            <h1>Hi, I build <span class="highlight">websites & apps</span> that work great</h1>
+            <p>I am a front-end developer passionate about making clean, responsive, and easy-to-use websites for everyone.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> View Projects</a>
+                <a href="#contact" class="btn btn-secondary"><i class="fa-regular fa-envelope"></i> Contact Me</a>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <h3 class="counter" data-target="25">0</h3>
+                    <p>Done Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="100">0</h3>
+                    <p>% Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="3">0</h3>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-container">
+            <div class="about-text">
+                <h3>Passionate Web Developer</h3>
+                <p>I focus on writing clean HTML, CSS, and JavaScript. I enjoy learning new tech stack and turning ideas into real working code.</p>
+                
+                <div class="skills">
+                    <h4>Tech Skills I use:</h4>
+                    <div class="skill-tags">
+                        <span><i class="fa-brands fa-html5"></i> HTML5</span>
+                        <span><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                        <span><i class="fa-brands fa-js"></i> JavaScript</span>
+                        <span><i class="fa-brands fa-react"></i> React</span>
+                        <span><i class="fa-brands fa-github"></i> Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-light">
+        <h2 class="section-title">My <span>Services</span></h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Building responsive websites that adapt to all screen sizes cleanly.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fa-solid fa-palette"></i></div>
+                <h3>UI/UX Layouts</h3>
+                <p>Creating simple, modern and clear interface layouts for better experience.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fa-solid fa-gauge-high"></i></div>
+                <h3>Speed & Fixes</h3>
+                <p>Improving site load speed and fixing broken layout elements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="category">Web App</span>
+                    <h3>Task Manager</h3>
+                    <p>A simple task manager app with local storage support to keep your notes saved.</p>
+                    <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="category">E-Commerce</span>
+                    <h3>Online Store Front</h3>
+                    <p>Clean store front UI design built with flexible layout and dark theme.</p>
+                    <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="category">Dashboard</span>
+                    <h3>Analytics Dashboard</h3>
+                    <p>An interactive admin panel design to track stats and daily charts.</p>
+                    <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <div class="contact-container">
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" placeholder="Your Message..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+                <div id="formStatus" class="form-status"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © <span id="year"></span> | Built with hard work 🚀</p>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="scrollTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- JS File -->
+    <script src="script.js"></script>
+</body>
+</html>
